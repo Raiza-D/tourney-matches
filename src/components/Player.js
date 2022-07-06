@@ -11,7 +11,7 @@ function Player(props) {
       {/* To be shown when there is 1 win */}
       <h2>Currently at 1 win</h2>
       {/* To be shown when there is more than one win */}
-      <h2>Currently at 1+ wins</h2>
+      <h2>Currently at {props.wins} wins</h2>
     </article>
   );
 };
