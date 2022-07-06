@@ -5,26 +5,22 @@ export const preparePlayerData = (playerData) => {
 };
 
 export const addWinsToPlayers = (playerData, matchData) => {
-  for (const player in playerData) {
-    playerData[player].wins = 0;
-    for (const match of matchData) {
-      if (match.winner === player) {
-        playerData[player].wins++;
-      }
-    }
-  }
-  return playerData;
-};
+  return playerDataArray.map((player) => {
 
-const addWinsToPlayers = (playerData, matchData) => {
-  for (const player in playerData) {
-    playerData[player].wins = 0;
-    let sum = matchData.reduce(function(previousValue, currentValue) {
-      if (matchData.winner === player) {
-        previousValue + currentValue;
-        playerData[player].wins = sum;
+    // Calculating the number of wins in the matchData
+    const currentWins = matchData.reduce((accumulator, match) => {
+      
+      // Adds a win if the gamerTag matches
+      if (match.winner === player.gamerTag) {
+        return (accumulator += 1);
+      } else {
+        return accumulator;
       }
-    });
-  }
-  return playerData;
-}
+    }, 0);
+
+    // Assigns the value to the wins key
+    player.wins = currentWins;
+
+    return player;
+  });
+};
