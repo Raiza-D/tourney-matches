@@ -8,7 +8,7 @@ export const preparePlayerData = (playerData) => {
 Iterates over each player in playerData. Then iterates over each match in matchData.
 If player in iteration is the winner of the match, increase tally.
 Return player showing wins key and value. */
-export const addWinsToPlayers = (playerData, matchData) => {
+export const addWinsToPlayers = (playerDataArray, matchData) => {
   return playerDataArray.map((player) => {
 
     // Calculating the number of wins in the matchData
