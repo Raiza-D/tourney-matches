@@ -1,6 +1,9 @@
+import playerData from '../data/playerData';
 
-export const preparePlayerData = () => {
 
+export const preparePlayerData = (playerData) => {
+  const resultPlayerData = Object.values(playerData);
+  return resultPlayerData;
 };
 
 
