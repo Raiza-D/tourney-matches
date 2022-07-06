@@ -1,9 +1,7 @@
-import playerData from '../data/playerData';
 
 
 export const preparePlayerData = (playerData) => {
-  const resultPlayerData = Object.values(playerData);
-  return resultPlayerData;
+  return Object.values(playerData);
 };
 
 
