@@ -1,10 +1,10 @@
 
 
-const preparePlayerData = (playerData) => {
+export const preparePlayerData = (playerData) => {
   return Object.values(playerData);
 };
 
-const addWinsToPlayers = (playerData, matchData) => {
+export const addWinsToPlayers = (playerData, matchData) => {
   for (const player in playerData) {
     playerData[player].wins = 0;
     for (const match of matchData) {
@@ -16,3 +16,15 @@ const addWinsToPlayers = (playerData, matchData) => {
   return playerData;
 };
 
+const addWinsToPlayers = (playerData, matchData) => {
+  for (const player in playerData) {
+    playerData[player].wins = 0;
+    let sum = matchData.reduce(function(previousValue, currentValue) {
+      if (matchData.winner === player) {
+        previousValue + currentValue;
+        playerData[player].wins = sum;
+      }
+    });
+  }
+  return playerData;
+}
