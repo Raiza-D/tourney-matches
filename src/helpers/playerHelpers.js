@@ -82,13 +82,15 @@ const preparePlayerData = (playerData) => {
 const addWinsToPlayers = (playerData, matchData) => {
   for (const player in playerData) {
     playerData[player].wins = 0;
+    console.log("This is player: ", player, playerData[player].wins);
     for (const match of matchData) {
       if (match.winner === player) {
         playerData[player].wins++;
       }
+      console.log("These are the tallied wins: ", playerData[player].wins);
     }
   }
-  return matchData;
+  return playerData;
 };
 
 console.log(preparePlayerData(playerData));
