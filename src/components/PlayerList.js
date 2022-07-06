@@ -1,5 +1,5 @@
 import React from 'react';
-import playerData from '../data/PlayerData';
+import playerData from '../data/playerData';
 import matchData from '../data/matchData';
 import Player from './Player';
 
