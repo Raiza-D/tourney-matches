@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <h1>
         Tourney Matches
-        <span>Where Coding and Tournaments found their Match!</span>
+        <span>  Where Coding and Tournaments found their Match!</span>
       </h1>
       <PlayerList playerData={parsedPlayerData}/>
       <MatchList matchData={matchData}/>
